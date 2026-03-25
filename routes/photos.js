@@ -38,7 +38,7 @@ router.post("/:token", async (req, res) => {
     }
 });
 
-//route DELETE photo------------------------------------------------
+//route DELETE photo (non utilisé en frontend)------------------------------------------------
 router.delete("/delete/:token", async (req, res) => {
     const token = req.params.token;
     const _id = req.body._id;

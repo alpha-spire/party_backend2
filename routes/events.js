@@ -15,6 +15,7 @@ router.get("/:token", async (req, res) => {
             .populate("adminId")
             .populate("memberIds");
 
+        //filtre les events liés à l'utilisateur en tant admin ou member
         if (events) {
             const eventListUser = events.filter(
                 (event) =>
@@ -90,7 +91,7 @@ router.delete("/delete/:token", async (req, res) => {
     const token = req.params.token;
     const id = req.body._id;
 
-    //condition pour supprimer uniquement par admin
+    //condition pour supprimer uniquement par admin(non finalisé)
     const data = await getUserByToken(token);
 
     if (data) {

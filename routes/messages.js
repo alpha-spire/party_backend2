@@ -16,7 +16,7 @@ router.get("/:eventId", async (req, res) => {
     }
 });
 
-//route GET obtenir le dernier message d'un event---------------------------------------------------------------
+//route GET obtenir le dernier message d'un event (non utilisé dans le frontend)-------------------------------
 router.get("/lastMessage/:eventId", async (req, res) => {
     const { eventId } = req.params;
 

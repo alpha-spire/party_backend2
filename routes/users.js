@@ -81,14 +81,14 @@ router.get("/:token", async (req, res) => {
 
 //route POST UPDATE modifier les infos du user--------------------------------------
 router.post("/update/", async (req, res) => {
-    const authHeader = req.headers.authorization;
+    const authHeader = req.headers.authorization;  //string `Bearer ${user.token}`
 
     if (!authHeader) {
         res.json({ error: "Unauthorized" });
         return;
     }
 
-    const token = authHeader.split(" ")[1];
+    const token = authHeader.split(" ")[1];   // string -> liste de mots ['bearer','${user.token}']
 
     const {
         username,
